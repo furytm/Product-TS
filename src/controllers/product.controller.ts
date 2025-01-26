@@ -25,7 +25,7 @@ export class ProductController {
 
     }
 
-    // Get all products
+
     async getAllProducts(req: Request, res: Response): Promise<void> {
         try {
             const products = await productService.getAllProducts();
@@ -36,7 +36,7 @@ export class ProductController {
         }
     }
 
-    // Get a single product by ID
+
     async getProductById(req: Request, res: Response): Promise<void> {
         const productId = req.params.id;
 
@@ -52,7 +52,7 @@ export class ProductController {
         }
     }
 
-    // Update a product by ID
+
     async updateProduct(req: Request, res: Response): Promise<void> {
         const productId = req.params.id;
         const productData = req.body;
@@ -69,7 +69,6 @@ export class ProductController {
         }
     }
 
-    // Delete a product by ID
     async deleteProduct(req: Request, res: Response): Promise<void> {
         const productId = req.params.id;
 

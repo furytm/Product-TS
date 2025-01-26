@@ -8,25 +8,24 @@ async createProduct(data: IProduct):Promise<IProduct>{
     return await newProduct.save();
 }
 
-  // Get all products
+  
   async getAllProducts(): Promise<IProduct[]> {
     return await ProductModel.find();
   }
 
-  // Get a single product by ID
+
   async getProductById(productId: string): Promise<IProduct | null> {
     return await ProductModel.findById(productId);
   }
 
-  // Update a product by ID
+
   async updateProduct(productId: string, data: Partial<IProduct>): Promise<IProduct | null> {
     return await ProductModel.findByIdAndUpdate(productId, data, {
-      new: true, // Return the updated product
-      runValidators: true, // Ensure validation rules are applied
+      new: true, 
+      runValidators: true, 
     });
   }
 
-  // Delete a product by ID
   async deleteProduct(productId: string): Promise<IProduct | null> {
     return await ProductModel.findByIdAndDelete(productId);
   }
